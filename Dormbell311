@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DormBell: An Arduino-Based Smart Door Notification System">
+    <title>DormBell: Arduino-Based Smart Door Notification System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DormBell: Arduino-Based Smart Door Notification System</h1>
+        <p>An innovative solution to enhance communication and convenience for dormitory residents.</p>
+    </header>
+
+    <main>
+        <section class="section" id="introduction">
+            <h2>Introduction/Context</h2>
+            <p>The DormBell is an innovative Arduino-based system designed to address the common challenges college students living in dorms face. Our product combines an ultrasonic motion sensor, an LCD screen, a buzzer, and customizable switches to improve communication and amenities for dorm residents.</p>
+            <p>The DormBell was created to provide a hands-free, interactive solution for students to announce their presence in a dorm room. It reduces the reliance on traditional knocking, which can be inconvenient. The ultrasonic sensor detects motion, triggering a buzzer inside the room. At the same time, the LCD screen displays pre-programmed messages such as "Come In!" or "I'm Busy!" based on the user's preferences. These messages can be easily customized using dip switches.</p>
+            <p>This project usefully applies the skills we have developed through our coursework, incorporating principles of circuitry, sensor integration, and hands-on prototyping. The DormBell is a tool for addressing immediate communication issues in dormitories and a platform for showcasing our engineering design capabilities and learning experiences.</p>
+        </section>
+
+        <section class="section" id="motivation">
+            <h2>Motivation</h2>
+            <p>Our motivation for developing the DormBell arises from common challenges faced by college students living in dorms. Traditional knocking methods are often ineffective or inconvenient when students' hands are full, making it difficult to announce their presence. Additionally, communication preferences among dorm residents can be unclear; students often struggle to indicate whether they are available or would prefer not to be disturbed. These challenges motivated us to design a solution that handles functionality and user convenience.</p>
+            <p>The DormBell handles these issues by providing a hands-free way to announce one’s presence through an ultrasonic motion sensor, eliminating the need for knocking, and a buzzer to alert students. Furthermore, the integrated LCD allows users to communicate customizable messages, such as "Come In!" or "Come Back Later," enabling clearer communication and nurturing a sense of community among residents.</p>
+            <p>This project fulfills a beneficial need and aligns with our enthusiasm for learning and applying engineering skills. It allows us to work with Arduino, develop sensor-based systems, and experiment with 3D printing to create a usable product. By addressing specific needs and integrating technical work, the DormBell showcases our commitment to creating user-centered solutions while enhancing our understanding of system design.</p>
+        </section>
+
+        <section class="section" id="materials">
+            <h2>List of Equipment and Materials</h2>
+            <ul>
+                <li><a href="https://store.arduino.cc/products/arduino-uno-rev3">Arduino Uno</a> (1 unit)</li>
+                <li><a href="https://www.amazon.com/dp/B01N9R42Q4">Ultrasonic Motion Sensor (HC-SR04)</a> (1 unit)</li>
+                <li><a href="https://www.amazon.com/dp/B07WDJ4RW7">16x2 LCD Display with I2C module</a> (1 unit)</li>
+                <li><a href="https://www.amazon.com/dp/B07K86ZKKF">Passive Buzzer</a> (1 unit)</li>
+                <li><a href="https://www.amazon.com/dp/B07Y5YJMGH">Dip Switch</a> (1 unit)</li>
+                <li><a href="https://www.amazon.com/dp/B06XZ31W3M">Jumper Wires</a> (assorted)</li>
+                <li><a href="https://www.amazon.com/dp/B079L31SYR">Breadboard</a> (1 unit)</li>
+                <li><a href="https://www.amazon.com/dp/B01E5JV6S0">10KΩ Resistors</a> (as needed)</li>
+                <li><a href="https://www.amazon.com/dp/B07K86ZKKF">5V DC Power Supply</a> (1 unit)</li>
+            </ul>
+        </section>
+
+        <section class="section" id="instructions">
+            <h2>Instructions</h2>
+            <h3>Step 1: Assemble the Components</h3>
+            <ol>
+                <li>Place the Arduino Uno on the breadboard and connect the ultrasonic sensor to its designated pins:
+                    <ul>
+                        <li>VCC to 5V</li>
+                        <li>GND to GND</li>
+                        <li>TRIG to Pin 9</li>
+                        <li>ECHO to Pin 8</li>
+                    </ul>
+                </li>
+                <li>Connect the LCD display to the Arduino using the I2C module:
+                    <ul>
+                        <li>GND to GND</li>
+                        <li>VCC to 5V</li>
+                        <li>SDA to A4</li>
+                        <li>SCL to A5</li>
+                    </ul>
+                </li>
+                <li>Attach the buzzer to the Arduino:
+                    <ul>
+                        <li>Positive terminal to Pin 7</li>
+                        <li>Negative terminal to GND</li>
+                    </ul>
+                </li>
+                <li>Wire the dip switch to digital pins (e.g., 3, 4, 5, 6) for customizable LCD messages.</li>
+            </ol>
+
+            <h3>Step 2: Code Upload</h3>
+            <p>Upload the provided Arduino code using the Arduino IDE. Ensure all necessary libraries, such as <code>LiquidCrystal_I2C.h</code>, are installed.</p>
+
+            <h3>Step 3: Testing and Debugging</h3>
+            <ol>
+                <li>Power the Arduino and test the ultrasonic sensor by moving your hand in front of it.</li>
+                <li>Verify that the LCD displays the appropriate message and that the buzzer sounds when motion is detected.</li>
+                <li>Adjust the dip switch to test message customization.</li>
+            </ol>
+
+            <h3>Step 4: Final Assembly</h3>
+            <p>Secure all components and mount them in a 3D-printed or hand-built case for a polished final product.</p>
+        </section>
+
+        <section class="section" id="references">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=aW7bewAq9Ak">How To Display Message On LCD Using Arduino Serial Monitor</a></li>
+                <li><a href="https://www.youtube.com/watch?v=HynLoCtUVtU">Using Ultrasonic Distance Sensor HC-SR04 with Buzzer, LED and Arduino</a></li>
+                <li><a href="https://www.tinkercad.com/things/bPSnhNAJmmt/editel">TinkerCAD Circuit</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DormBell Project Team</p>
+    </footer>
+</body>
+</html>
